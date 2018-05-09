@@ -8,7 +8,7 @@ import re as regex
 import numpy as np
 import pandas as pd
 # import seaborn as sns
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from tqdm import tqdm
 import configparser
 from random import randint
