@@ -7,7 +7,7 @@ import tweepy
 import re as regex
 import numpy as np
 import pandas as pd
-import seaborn as sns
+# import seaborn as sns
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import configparser
@@ -165,15 +165,15 @@ def print_stats(data, amount=10):
 
 
 """Create heatmap of user activity"""
-def graph_heatmap(userId, num_of_tweets, utc_offset):
-	index = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-	cols = ["%.2d:00" %x for x in range(24)]
-	df_activity = pd.DataFrame(daily_activity_matrix, index=index, columns=cols)
-	axes = sns.heatmap(df_activity, annot=True)
-	axes.set_title('Heatmap of @%s Twitter Activity \n Generated %s for last %s tweets' %(userId, datetime.date.today(), num_of_tweets), fontsize=14)
-	plt.xlabel("Time (UTC offset in seconds: %s)" %utc_offset)
-	plt.yticks(rotation=0)
-	plt.savefig("graphs/" + str(userId) + ".png")
+# def graph_heatmap(userId, num_of_tweets, utc_offset):
+# 	index = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+# 	cols = ["%.2d:00" %x for x in range(24)]
+# 	df_activity = pd.DataFrame(daily_activity_matrix, index=index, columns=cols)
+# 	axes = sns.heatmap(df_activity, annot=True)
+# 	axes.set_title('Heatmap of @%s Twitter Activity \n Generated %s for last %s tweets' %(userId, datetime.date.today(), num_of_tweets), fontsize=14)
+# 	plt.xlabel("Time (UTC offset in seconds: %s)" %utc_offset)
+# 	plt.yticks(rotation=0)
+# 	plt.savefig("graphs/" + str(userId) + ".png")
 
 
 
