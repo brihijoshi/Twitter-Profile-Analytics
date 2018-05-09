@@ -137,7 +137,7 @@ def get_tweets(api, user, limit):
         # break
         # process_tweet(tweet)
 
-    with open("tweets/" + user + ".json","wb") as fw:
+    with open("followees_of_verified/tweets/" + user + ".json","wb") as fw:
          json.dump(tweets_arr, fw)
     #sys.exit(1)
 
@@ -250,7 +250,7 @@ def main():
             # utc_offset = 0 if args.no_timezone else utc_offset
             #graph_heatmap(user.id, num_of_tweets, utc_offset)
 
-         with open("datas/" + str(user.id) + "_profileInfo.csv","w") as fp:
+         with open("followees_of_verified/datas/" + str(user.id) + "_profileInfo.csv","w") as fp:
              fp.write(str(user.name.encode('utf8')) + ";" + str(user.id) + ";" + str(user.description.encode('utf8')) + ";" + str(user.followers_count) + ";" + str(user.friends_count) + ";" + str(user.lang) + ";" + str(user.geo_enabled) + ";" + str(user.location) + ";" + str(user.time_zone) + ";" + str(user.utc_offset) + ";" + str(user.statuses_count) + ";" + str(detected_hashtags) + ";" + str(detected_urls) + ";" + str(mentioned_users) + ";" + str(retweeted_users) + ";" + str(detected_locations) + ";" + str(detected_devices))
              fp.close()
 
