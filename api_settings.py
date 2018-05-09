@@ -1,4 +1,4 @@
-import ConfigParser
+import configparser
 import sys
 
 """
@@ -28,15 +28,15 @@ def populate_Settings(sfile, hfile):
 
 	last = int(content[0])
 
-	config = ConfigParser.ConfigParser()
+	config = configparser.ConfigParser()
 	config.readfp(open(settings_file))
 
 	minVal = 1
 	while minVal:
 		try:
-			print config.get('API Keys ' + str(minVal), 'API_KEY')
+			print (config.get('API Keys ' + str(minVal), 'API_KEY'))
 			minVal += 1
-		except ConfigParser.NoSectionError:
+		except configparser.NoSectionError:
 			break
 	minVal = minVal - 1
 	
